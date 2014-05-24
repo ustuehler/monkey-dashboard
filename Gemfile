@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 # Use my own monkey gem (there's another one for monkey patches on RubyGems)
-#gem 'office_monkey', :git => 'https://github.com/ustuehler/monkey', :require => 'monkey'
-gem 'office_monkey', :git => '../monkey', :require => 'monkey'
+#gem 'office_monkey', :github => 'ustuehler/monkey', :require => 'monkey'
+gem 'office_monkey', :path => "../monkey", :require => 'monkey'
 
 # Use RedCarpet for Markdown rendering
 gem 'redcarpet'
