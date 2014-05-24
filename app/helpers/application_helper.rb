@@ -1,12 +1,14 @@
 module ApplicationHelper
-  # Bootstrap CSS contextual colors
-  [:muted, :primary, :success, :info, :warning, :danger].each do |level|
-    define_method(level) do |text|
-      content_tag :span, text, :class => "text-#{level}"
-    end
+  def human_date(date = Date.today)
+    format = if date.year == Date.today.year
+               '%A, %B %-d'
+             else
+               '%A, %B %-d %Y'
+             end
+    date.strftime format
   end
 
-  def human_date(date = Date.today)
-    date.strftime '%A, %B %-d'
+  def ledger
+    @ledger ||= Monkey::Accounting.default_ledger
   end
 end
