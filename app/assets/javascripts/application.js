@@ -12,6 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require jquery.turbolinks
 //= require bootstrap
 //= require_tree .
+// "window is null" when clicking on a link that loads the same page again (in a single GET request)
+//= require turbolinks
