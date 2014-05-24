@@ -9,12 +9,14 @@ edit the key `accounting:bank_accounts` in `~/.monkey/config.yml` and list the n
   <thead>
     <th>Account Name</th>
     <th class="text-right">Balance</th>
+    <th class="text-right">Reconciled</th>
   </thead>
   <tbody>
     <% ledger.bank_accounts.sort.each do |a| %>
     <tr>
       <td><%= a.name %></td>
-      <td class="text-right"><%= a.balance %></td>
+      <td class="text-right"><%= a.balance < 0 ? warning(a.balance) : success(a.balance) %></td>
+      <td class="text-right"><%= danger 'never' %></td>
     </tr>
     <% end %>
   </tbody>
