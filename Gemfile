@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+# Use RedCarpet for Markdown rendering
+gem 'redcarpet'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
