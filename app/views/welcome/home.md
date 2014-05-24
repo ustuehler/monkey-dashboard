@@ -20,4 +20,12 @@ One week may not make much of a difference if your overall financial status is r
 That's all from me. I'm not helping you any more until you update your ledger.
 
 — Office Monkey
+<% else %>
+Your contributed capital is <%= contributed_capital %>.
+Your assets are <%= assets %>.
+Your liabilities are <%= liabilities %>.
+Your total income is <%= income %>.
+Your total expenses are <%= expenses %>.
+Your net income is therefore <%= net_income < 0 ? success(net_income) : warning(net_income) %>.
+Your owners equity is <%= owners_equity %>.
 <% end %>
