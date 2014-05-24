@@ -1,4 +1,6 @@
 MonkeyDashboard::Application.routes.draw do
+  resources :settings
+
   get ':action', :controller => 'welcome'
 
   # The priority is based upon order of creation: first created -> highest priority.
