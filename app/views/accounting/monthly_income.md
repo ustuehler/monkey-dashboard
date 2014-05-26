@@ -1,4 +1,4 @@
-Showing monthly expenses from <%= @first_month.strftime '%B %Y' %> to <%= @last_month.strftime '%B %Y' %>.
+Showing monthly income from <%= @first_month.strftime '%B %Y' %> to <%= @last_month.strftime '%B %Y' %>.
 
 <table class="table">
   <thead>
@@ -9,7 +9,7 @@ Showing monthly expenses from <%= @first_month.strftime '%B %Y' %> to <%= @last_
     </tr>
   </thead>
   <tbody>
-    <% @monthly_expenses.reverse.each do |month_date, amount, average, avgdiff| %>
+    <% @monthly_income.reverse.each do |month_date, amount, average, avgdiff| %>
     <tr>
       <td><%= month_date.strftime '%B %Y' %></td>
       <td class="text-right"><%= amount %></td>
