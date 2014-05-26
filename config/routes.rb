@@ -1,6 +1,8 @@
 MonkeyDashboard::Application.routes.draw do
   resources :settings
 
+  get 'accounting/monthly-expenses', :controller => 'accounting', :action => 'monthly_expenses'
+  get 'accounting/:action', :controller => 'accounting'
   get ':action', :controller => 'welcome'
 
   # The priority is based upon order of creation: first created -> highest priority.

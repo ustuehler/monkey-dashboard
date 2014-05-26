@@ -34,8 +34,14 @@
           <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
             <ul class="nav">
               <li class="active"><a href="/">Home</a></li>
-              <li><%= link_to "Accounting", "/accounting"  %></li>
-              <li><%= link_to "Banking", "/banking"  %></li>
+              <li>
+                <%= link_to "Accounting", "/accounting", class: 'tree-toggle' %>
+                <ul class="nav tree">
+                  <li><%= link_to "Overview", "/accounting" %></li>
+                  <li><%= link_to "Monthly Expenses", "/accounting/monthly-expenses" %></li>
+                </ul>
+              </li>
+              <li><%= link_to "Banking", "/banking" %></li>
               <li>
                 <%= link_to "Business", "/business", class: 'tree-toggle' %>
                 <ul class="nav tree">
