@@ -15,8 +15,8 @@
         <td><%= setting.name %></td>
         <td><%= setting.value %></td>
         <td class="text-right">
-          <%= link_to 'Edit', edit_setting_path(setting), :class => 'btn btn-primary' %>
-          <%= link_to 'Destroy', setting, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+          <%= link_to 'Edit', edit_setting_path(setting), :class => 'label label-primary' %>
+          <%= link_to 'Destroy', setting, method: :delete, data: { confirm: 'Are you sure?' }, class: 'label label-danger' %>
         </td>
       </tr>
     <% end %>
