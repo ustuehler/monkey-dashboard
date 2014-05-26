@@ -6,6 +6,9 @@ body {
   // the start of it is not covered by the navbar.
   padding-top: 55px;
 }
+div#main {
+  padding-top: 15px;
+}
 .text-center {
   padding-top: 20px;
 }
@@ -86,4 +89,26 @@ body {
     border-top-color: #fff;
     border-bottom-color: #fff;
   }
+}
+
+/* Collapse submenus initially */
+ul .tree {
+  display: none;
+}
+
+/* Submenu items should fill the same width as the outer menu */
+#sidebar .tree {
+  width: 100%;
+}
+
+#sidebar .tree>li:first-child {
+  border-top-width: 1px;
+}
+
+#sidebar .tree>li:last-child {
+  border-bottom-width: 0;
+}
+
+#sidebar .tree a {
+  padding-left: 25px;
 }

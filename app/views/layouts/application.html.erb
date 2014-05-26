@@ -36,13 +36,21 @@
               <li class="active"><a href="/">Home</a></li>
               <li><%= link_to "Accounting", "/accounting"  %></li>
               <li><%= link_to "Banking", "/banking"  %></li>
-              <li><%= link_to "Business", "/business"  %></li>
+              <li>
+                <%= link_to "Business", "/business", class: 'tree-toggle' %>
+                <ul class="nav tree">
+                  <li><%= link_to "Overview", "/business" %></li>
+                  <li><%= link_to "Customers", "/business/customers" %></li>
+                  <li><%= link_to "Suppliers", "/business/suppliers" %></li>
+                  <li><%= link_to "Invoices", "/business/invoices" %></li>
+                </ul>
+              </li>
               <li><%= link_to "Settings", "/settings"  %></li>
             </ul>
           </div>
 
           <!-- main area -->
-          <div class="col-xs-12 col-sm-9">
+          <div id="main" class="col-xs-12 col-sm-9">
             <%= yield %>
           </div><!-- /.col-xs-12 main -->
 
