@@ -1,13 +1,13 @@
 <ol class="breadcrumb">
   <li><%= link_to 'Accounting', '/accounting' %></li>
   <% if @account %>
-  <li><%= link_to 'Balance', '/accounting/balance' %></li>
+  <li><%= link_to 'Balances', '/accounting/balances' %></li>
   <% @account.ancestors.reverse.each do |account| %>
-  <li><%= link_to account.name, "/accounting/balance/#{account}" %></li>
+  <li><%= link_to account.name, "/accounting/balances/#{account}" %></li>
   <% end %>
   <li class="active"><%= @account.name %></li>
   <% else %>
-  <li class="active">Balance</li>
+  <li class="active">Balances</li>
   <% end %>
 </ol>
 
@@ -24,7 +24,7 @@
       <% if account.children.size == 0 %>
         <%= account.name %></td>
       <% else %>
-        <%= link_to account.name, "/accounting/balance/#{account}" %>
+        <%= link_to account.name, "/accounting/balances/#{account}" %>
       <% end %>
       </td>
       <td class="text-right"><%= balance += account.balance; account.balance %></td>

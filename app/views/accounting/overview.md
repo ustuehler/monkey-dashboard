@@ -14,6 +14,6 @@ to <%= @last_date.strftime '%B %Y' %>.
 
 Would you like to check your [account balances][1] or monthly [income][2] and [expenses][3] now?
 
-[1]: /accounting/balance
+[1]: /accounting/balances
 [2]: /accounting/monthly-income
 [3]: /accounting/monthly-expenses

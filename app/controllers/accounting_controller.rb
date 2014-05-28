@@ -5,7 +5,7 @@ class AccountingController < ApplicationController
     @last_date = @entries.last.date
   end
 
-  def balance
+  def balances
     if params[:account]
       @account = view_context.ledger.account(params[:account])
       @accounts = @account.children
@@ -13,6 +13,7 @@ class AccountingController < ApplicationController
       @account = nil
       @accounts = view_context.ledger.accounts.select { |a| a.parent.nil? }
     end
+    @accounts.sort!
   end
 
   def monthly_income
