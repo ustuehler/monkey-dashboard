@@ -1,16 +1,14 @@
-Here's a list of all the accounts in your ledger and their current balance.
+<ol class="breadcrumb">
+  <li class="active">Accounting</li>
+</ol>
 
-<table class="table">
-  <thead>
-    <th>Account Name</th>
-    <th class="text-right">Balance</th>
-  </thead>
-  <tbody>
-    <% ledger.accounts.sort.each do |a| %>
-    <tr>
-      <td><%= a.name %></td>
-      <td class="text-right"><%= a.balance %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<blockquote>
+  <p>Accounting, or accountancy, is the measurement, processing and communication of financial information about economic entities.</p>
+  <footer><a href="https://en.wikipedia.org/wiki/Accounting"><cite title="Wikipedia - Accounting">Wikipedia</cite></a></footer>
+</blockquote>
+
+Check your [account balances][1], [monthly expenses][2] and [monthly income][3].
+
+[1]: /accounting/balance
+[2]: /accounting/monthly-expenses
+[3]: /accounting/monthly-income

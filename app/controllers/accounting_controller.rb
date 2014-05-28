@@ -1,4 +1,14 @@
 class AccountingController < ApplicationController
+  def balance
+    if params[:account]
+      @account = view_context.ledger.account(params[:account])
+      @accounts = @account.children
+    else
+      @account = nil
+      @accounts = view_context.ledger.accounts.select { |a| a.parent.nil? }
+    end
+  end
+
   def monthly_income
     @monthly_income = monthly_summary(view_context.ledger.income_accounts)
   end

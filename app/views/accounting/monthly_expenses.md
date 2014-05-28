@@ -1,3 +1,8 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Accounting', '/accounting' %></li>
+  <li class="active">Monthly Expenses</li>
+</ol>
+
 Showing monthly expenses from <%= @first_month.strftime '%B %Y' %> to <%= @last_month.strftime '%B %Y' %>.
 
 <table class="table">
