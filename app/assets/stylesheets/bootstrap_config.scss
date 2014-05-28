@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+$content-padding-top: 5px;
+
 body {
   // The fixed navbar at the top is 50px high by default. This moves the main
   // page content down by that amount plus some more (for aesthetics) so that
@@ -7,7 +9,7 @@ body {
   padding-top: 55px;
 }
 div#main {
-  padding-top: 15px;
+  padding-top: $content-padding-top;
 }
 .text-center {
   padding-top: 20px;
@@ -19,7 +21,7 @@ div#main {
   height: 100%;
   min-height: 400px;
   padding-right: 0;
-  padding-top: 20px;
+  padding-top: $content-padding-top;
 }
 #sidebar .nav {
   width: 95%;
