@@ -1,4 +1,10 @@
 class AccountingController < ApplicationController
+  def overview
+    @entries = view_context.ledger.entries.sort_by(&:date)
+    @first_date = @entries.first.date
+    @last_date = @entries.last.date
+  end
+
   def balance
     if params[:account]
       @account = view_context.ledger.account(params[:account])
