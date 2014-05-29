@@ -3,7 +3,7 @@
   <li class="active">Ledger</li>
 </ol>
 
-<table class="table table-hover">
+<table id="ledger" class="table table-hover">
   <thead>
     <th>Date</th>
     <th>Description / Transactions</th>

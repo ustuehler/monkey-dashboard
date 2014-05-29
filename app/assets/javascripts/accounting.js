@@ -1,18 +1,20 @@
 $(document).ready(function() {
-  $('td.actions a.glyphicon-edit').click(function(e) {
-    e.stopPropagation();
-    alert('edit: entry-id=' + $(this).parent().parent().attr('entry-id'));
+  $('table#ledger').on('click', 'a.glyphicon-edit', function(event) {
+    event.stopPropagation();
+    alert('edit: entry-id=' + $(this).closest('tr').attr('entry-id'));
   });
 
-  $('td.actions a.glyphicon-remove').click(function(e) {
-    e.stopPropagation();
-    alert('remove: entry-id=' + $(this).parent().parent().attr('entry-id'));
+  $('table#ledger').on('click', 'a.glyphicon-remove', function(event) {
+    event.stopPropagation();
+    alert('remove: entry-id=' + $(this).closest('tr').attr('entry-id'));
   });
 
-  $('tr.ledger-entry').click(function(e) {
-    if (e.target.nodeName != 'A') {
-      $(this).toggleClass('success');
-      $('tr.ledger-transaction[entry-id=' + $(this).attr('entry-id') + ']').
+  $('table#ledger').on('click', 'tr.ledger-entry', function(event) {
+    var element = $(this);
+
+    if (!$(event.target).is('a')) {
+      element.toggleClass('success');
+      $('tr.ledger-transaction[entry-id=' + element.attr('entry-id') + ']').
         toggleClass('warning').
         toggle();
     }
