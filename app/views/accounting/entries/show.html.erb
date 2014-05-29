@@ -1,4 +1,23 @@
+<ol class="breadcrumb">
+  <li><%= link_to 'Accounting', accounting_path %></li>
+  <li><%= link_to 'Entries', accounting_entries_path %></li>
+  <li class="active"><%= @accounting_entry.id %></li>
+  <li><%= link_to 'Edit', edit_accounting_entry_path(@accounting_entry) %></li>
+</ol>
+
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_accounting_entry_path(@accounting_entry) %> |
-<%= link_to 'Back', accounting_entries_path %>
+<table class="table">
+  <thead>
+    <th>Date</th>
+    <th>Description / Transactions</th>
+    <th>Amount</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @accounting_entry.date %></td>
+      <td><%= @accounting_entry.description %></td>
+      <td><%= @accounting_entry.amount %></td>
+    </tr>
+  </tbody>
+</table>

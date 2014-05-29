@@ -1,5 +1,7 @@
-<h1>New accounting_entry</h1>
+<ol class="breadcrumb">
+  <li><%= link_to 'Accounting', accounting_path %></li>
+  <li><%= link_to 'Entries', accounting_entries_path %></li>
+  <li class="active">New</li>
+</ol>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', accounting_entries_path %>

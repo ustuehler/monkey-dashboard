@@ -5,10 +5,6 @@ class AccountingController < ApplicationController
     @last_date = @entries.last.date
   end
 
-  def ledger
-    @entries = view_context.ledger.entries.sort_by(&:date)
-  end
-
   def balances
     if params[:account]
       @account = view_context.ledger.account(params[:account])

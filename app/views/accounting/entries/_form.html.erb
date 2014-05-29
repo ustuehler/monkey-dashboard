@@ -11,6 +11,21 @@
     </div>
   <% end %>
 
+  <table class="table">
+    <thead>
+      <th>Date</th>
+      <th>Description / Transactions</th>
+      <th>Amount</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= f.date_field :date %></td>
+        <td><%= f.text_field :description %></td>
+        <td><%= f.text_field :amount %></td>
+      </tr>
+    </tbody>
+  </table>
+
   <div class="actions">
     <%= f.submit %>
   </div>

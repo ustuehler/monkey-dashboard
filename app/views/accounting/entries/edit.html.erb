@@ -1,6 +1,8 @@
-<h1>Editing accounting_entry</h1>
+<ol class="breadcrumb">
+  <li><%= link_to 'Accounting', accounting_path %></li>
+  <li><%= link_to 'Entries', accounting_entries_path %></li>
+  <li><%= link_to @accounting_entry.id, @accounting_entry %></li>
+  <li class="active">Edit</li>
+</ol>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @accounting_entry %> |
-<%= link_to 'Back', accounting_entries_path %>

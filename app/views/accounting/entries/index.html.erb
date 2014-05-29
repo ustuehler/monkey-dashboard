@@ -1,25 +1,36 @@
-<h1>Listing accounting_entries</h1>
+<ol class="breadcrumb">
+  <li><%= link_to 'Accounting', '/accounting' %></li>
+  <li class="active">Entries</li>
+  <li><%= link_to 'New', new_accounting_entry_path %></li>
+</ol>
 
-<table>
+<table id="ledger" class="table table-hover">
   <thead>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+    <th>Date</th>
+    <th>Description / Transactions</th>
+    <th class="text-right">Amount</th>
+    <th>Actions</th>
   </thead>
-
   <tbody>
-    <% @accounting_entries.each do |accounting_entry| %>
-      <tr>
-        <td><%= link_to 'Show', accounting_entry %></td>
-        <td><%= link_to 'Edit', edit_accounting_entry_path(accounting_entry) %></td>
-        <td><%= link_to 'Destroy', accounting_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <% @accounting_entries.each do |entry| %>
+    <tr class="ledger-entry" entry-id="<%= entry.id %>">
+      <td><%= entry.date %></td>
+      <td><%= entry.description %></td>
+      <td class="text-right"><%= raw(entry.amount.to_s.gsub(' ', '&nbsp;')) %></td>
+      <td class="actions">
+        <%= link_to '', entry, class: 'glyphicon glyphicon-new-window text-info' %>
+        <%= link_to '', edit_accounting_entry_path(entry), class: 'glyphicon glyphicon-edit text-warning' %>
+        <%= link_to '', entry, class: 'glyphicon glyphicon-remove text-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+    <% entry.transactions.each do |txn| %>
+    <tr class="ledger-transaction" entry-id="<%= entry.id %>">
+      <td></td>
+      <td><%= txn.account %></td>
+      <td class="text-right"><%= raw((txn.amount || entry.null_amount).to_s.gsub(' ', '&nbsp;')) %></td>
+      <td></td>
+    </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Entry', new_accounting_entry_path %>

@@ -4,7 +4,7 @@ class Accounting::EntriesController < ApplicationController
   # GET /accounting/entries
   # GET /accounting/entries.json
   def index
-    @accounting_entries = Accounting::Entry.all
+    @accounting_entries = Accounting::Entry.all.sort_by(&:date)
   end
 
   # GET /accounting/entries/1

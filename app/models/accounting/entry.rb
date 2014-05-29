@@ -1,5 +1,11 @@
+require 'forwardable'
+
 class Accounting::Entry
   include ActiveModel::Model
+  extend Forwardable
+
+  def_delegators :@entry, :date, :effective_date, :flag, :code, :description,
+    :transactions, :amount, :null_amount, :id
 
   def self.ledger
     Monkey::Accounting.default_ledger
