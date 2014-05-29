@@ -1,3 +1,18 @@
 // Place all the styles related to the accounting controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* Collapse transactions initially */
+tr.ledger-transaction {
+  display: none;
+}
+
+td.actions {
+  white-space: nowrap;
+}
+
+td.actions a:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
