@@ -10,11 +10,11 @@ $(document).ready(function() {
   });
 
   $('table#ledger').on('click', 'tr.ledger-entry', function(event) {
-    var element = $(this);
+    var $this = $(this);
 
     if (!$(event.target).is('a')) {
-      element.toggleClass('success');
-      $('tr.ledger-transaction[entry-id=' + element.attr('entry-id') + ']').
+      $this.toggleClass('success');
+      $('tr.ledger-transaction[entry-id=' + $this.attr('entry-id') + ']').
         toggleClass('warning').
         toggle();
     }
