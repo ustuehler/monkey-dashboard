@@ -1,0 +1,25 @@
+<h1>Listing accounting_entries</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounting_entries.each do |accounting_entry| %>
+      <tr>
+        <td><%= link_to 'Show', accounting_entry %></td>
+        <td><%= link_to 'Edit', edit_accounting_entry_path(accounting_entry) %></td>
+        <td><%= link_to 'Destroy', accounting_entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Entry', new_accounting_entry_path %>

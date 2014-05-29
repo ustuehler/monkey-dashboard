@@ -1,6 +1,10 @@
 ENV["RAILS_ENV"] ||= "test"
 require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
+require 'tempfile'
+
+# Use a temporary ledger file for tests.
+Monkey.config.accounting.default_ledger_file = Tempfile.new('ledger').path
 
 class ActiveSupport::TestCase
   ActiveRecord::Migration.check_pending!
