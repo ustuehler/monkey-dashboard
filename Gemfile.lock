@@ -157,6 +157,8 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-rails (0.3.2)
+      pry (>= 0.9.10)
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
@@ -237,7 +239,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   office_monkey!
-  pry
+  pry-rails
   rails (= 4.0.0)
   redcarpet
   sass-rails (~> 4.0.0)
