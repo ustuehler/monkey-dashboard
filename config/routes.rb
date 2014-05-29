@@ -1,6 +1,4 @@
 MonkeyDashboard::Application.routes.draw do
-  resources :settings
-
   get 'accounting', :controller => 'accounting', :action => 'overview'
   get 'accounting/balances/:account', :controller => 'accounting', :action => 'balances'
   get 'accounting/monthly-income', :controller => 'accounting', :action => 'monthly_income'
