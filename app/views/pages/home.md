@@ -1,13 +1,13 @@
 Today is <%= info human_date %> and the last entry in your ledger is
-<% if last_entry_age > 1.month %>
+<% if age_context(last_entry_age) == :danger %>
 <%= danger time_ago_in_words(last_entry.date) %> old.
 It took place on <%= danger human_date(last_entry.date) %>, so I'm pretty sure you didn't update your ledger in a loooong time.
 <%= danger 'Update your ledger NOW or as soon as possible!' %>
-<% elsif last_entry_age > 2.weeks %>
+<% elsif age_context(last_entry_age) == :warning %>
 <%= warning time_ago_in_words(last_entry.date) %> old.
 A couple of weeks may not make much of a difference to you if your overall financial situation is relatively stable, but it's a good habit to update your ledger frequently in order to keep an eye on your bank accounts.
 <%= warning 'Update your ledger soon.' %>
-<% elsif last_entry_age > 1.week %>
+<% elsif age_context(last_entry_age) == :info %>
 <%= info time_ago_in_words(last_entry.date) %> old.
 One week may not make much of a difference if your overall financial status is relatively stable, but keep an eye on it.
 <%= info 'Remember to update your ledger regularly.' %>

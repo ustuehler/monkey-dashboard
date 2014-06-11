@@ -6,12 +6,32 @@ module PagesHelper
     end
   end
 
-  def last_entry
-    @last_entry ||= ledger.entries.sort { |a,b| a.date <=> b.date }.last
+  def last_entry(account = nil)
+    (account == nil ? ledger : account).entries.sort_by(&:date).last
   end
 
-  def last_entry_age
-    1.day * (Date.today - last_entry.date)
+  def last_entry_age(account = nil)
+    age last_entry(account).date
+  end
+
+  def age(date)
+    1.day * (Date.today - date)
+  end
+
+  def age_context(age)
+    if age < 1.week
+      :success
+    elsif age < 2.weeks
+      :info
+    elsif age < 1.month
+      :warning
+    else
+      :danger
+    end
+  end
+
+  def contextual_date(date)
+    send age_context(age(date)), date
   end
 
   def equity
