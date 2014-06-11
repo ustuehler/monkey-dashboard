@@ -1,3 +1,6 @@
+//=require moment.min
+//=require bootstrap-editable
+
 $(document).ready(function() {
   $('table#ledger').on('click', 'tr.ledger-entry', function(event) {
     var $this = $(this);
