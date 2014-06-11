@@ -6,12 +6,12 @@ module PagesHelper
     end
   end
 
-  def last_transaction
-    @last_transaction ||= ledger.entries.sort { |a,b| a.date <=> b.date }.last
+  def last_entry
+    @last_entry ||= ledger.entries.sort { |a,b| a.date <=> b.date }.last
   end
 
-  def last_transaction_age
-    1.day * (Date.today - last_transaction.date)
+  def last_entry_age
+    1.day * (Date.today - last_entry.date)
   end
 
   def equity
