@@ -9,13 +9,13 @@ MonkeyDashboard::Application.routes.draw do
   get 'accounting/monthly-expenses', :controller => 'accounting', :action => 'monthly_expenses'
   get 'accounting/:action', :controller => 'accounting'
 
-  get ':action', :controller => 'welcome'
+  get ':action', :controller => 'pages'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'welcome#home'
+  root 'pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

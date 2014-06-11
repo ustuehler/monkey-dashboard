@@ -1,4 +1,4 @@
-module WelcomeHelper
+module PagesHelper
   # Bootstrap CSS contextual colors
   [:muted, :primary, :success, :info, :warning, :danger].each do |level|
     define_method(level) do |text|
